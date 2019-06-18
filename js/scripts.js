@@ -1,16 +1,11 @@
 $(document).ready(function() {
   $("#blanks form").submit(function(event) {
-    var person1Input = $("input#person1").val();
-    var adjective1Input = $("input#adjective1").val();
-    var verb1Input = $("input#verb1").val();
-    var food1Input = $("input#food1").val();
-    var adjective2Input = $("input#adjective2").val();
 
-    $(".person1").text(person1Input);
-    $(".adjective1").text(adjective1Input);
-    $(".verb1").text(verb1Input);
-    $(".food1").text(food1Input);
-    $(".adjective2").text(adjective2Input);
+    var datas = ["person1","adjective1","adjective2","food1","verb1"]
+      datas.forEach(function(data) {
+        var userInput = $("input#" + data).val();
+        $("." + data).text(userInput);
+      });
 
     $("#story").show();
 
